@@ -12,4 +12,8 @@ Pod::Spec.new do |spec|
   spec.framework = 'MessageUI'
   
   spec.ios.deployment_target = '6.0'
+
+  spec.subspec 'Debug' do |subspec|
+    subspec.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) FB_TWEAK_ENABLED=1' }
+  end
 end
